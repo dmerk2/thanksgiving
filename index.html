@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title>Thanksgiving</title>
+</head>
+<body>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Thanksgiving Recipes</a></li>
+  <li role="presentation"><a href="#">History behind Thanksgiving</a></li>
+  <li role="presentation"><a href="#">Why Celebrate?</a></li>
+</ul>
+
+<h1>Thanksgiving</h1>
+
+<div id="timer"></div><span> Seconds Remaining</span>
+<div id="countdown"></div>
+
+<button id="start" class="btn btn-primary">Click Here to Start</button>
+<button class="btn btn-primary" onclick="restart()">Reset Timer</button>
+
+<div id="questions">
+    <h3></h3>
+    <input type="radio" name="q1" value="a"> 
+    <input type="radio" name="q1" value="b"> 
+    <input type="radio" name="q1" value="c" data-correct='correct'> 
+    <input type="radio" name="q1" value="d"><br/><br/>
+
+        <!-- Girl Power -->
+    <h3></h3>
+    <input type='radio' name='q2' value='a'> 
+    <input type='radio' name='q2' value='b' data-correct='correct'>
+    <input type='radio' name='q2' value='c'>
+    <input type='radio' name='q2' value='d'><br/><br/>
+
+        <!--Chad Kroeger-->
+    <h3></h3>
+    <input type='radio' name='q3' value='a' data-correct='correct'>
+    <input type='radio' name='q3' value='b'>
+    <input type='radio' name='q3' value='c'>
+    <input type='radio' name='q3' value='d'><br/><br/>
+
+        <!--Brian May-->
+    <h3></h3>
+    <input type='radio' name='q4' value='a'>
+    <input type='radio' name='q4' value='b' data-correct='correct'> 
+    <input type='radio' name='q4' value='c'> 
+    <input type='radio' name='q4' value='d'>  <br/><br/>
+
+        <!--Canada-->
+    <h3></h3>
+    <input type='radio' name='q5' value='a'> 
+    <input type='radio' name='q5' value='b' data-correct='correct'> 
+    <input type='radio' name='q5' value='c'> 
+    <input type='radio' name='q5' value='d'><br/><br/>
+   
+        <!--False-->
+    <h3></h3>
+    <input type='radio' name='q6' value='a'> 
+    <input type='radio' name='q6' value='b' data-correct='correct'><br/><br/>
+
+    <br>
+    <button id="submit">Submit</button>
+  </div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/js.js"></script>
+</body>
+</html>
