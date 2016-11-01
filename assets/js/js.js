@@ -26,18 +26,24 @@ $(document).ready(function(){
 		//results will show after pushing submit
 		$("#results").show();
 		//pauses timer
-		pauseTimer();
+		pauseTimer();	
 	});
 
 	//timer pauses after clicking pause timer
-	$("#pauseTimer").on('click', function(){
+	$("#pauseGame").on('click', function(){
 		pauseTimer();
+		$("#questions").addClass('hide');
 	});
 
 	//timer resets after clicking reset timer
 	$('#restart').on('click', function(){
-        resetGame();
+        resetGame();        
         $("#questions").addClass('hide');
+        $("#questions").removeClass('hide');
+        $("#results").addClass('hide');
+        $(".jumbotron").removeClass('hide');
+        //clearing the checked radio buttons
+    	$("input:checked").removeAttr("checked");
     });
 });
 
