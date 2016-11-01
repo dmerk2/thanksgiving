@@ -2,6 +2,7 @@ var counter = 0;
 var intervalId;
 var correct = 0;
 var incorrect = 0;
+var timeSpent;
 
 $(document).ready(function(){
 	$("#results").hide();
@@ -12,25 +13,31 @@ $(document).ready(function(){
 	});
 
 	$("#submit").on('click', function(){
+		$(".jumbotron").addClass('hide');
+		$("#questions").addClass('hide');
 		//get the number of correct... :checked is what the user checked
 		var numberCorrect = $('input[data-correct="correct"]:checked').length;
 		var numberIncorrect = 10 - numberCorrect;
 		//puts in the html what questions were correct vs incorrect
 		$('#correct').html(numberCorrect);
 		$("#incorrect").html(numberIncorrect);
+		timeSpent = "It took you " + counter + " seconds to complete the Thanksgiving Trivia!"
+		$("#timeTaken").html(timeSpent);
 		//results will show after pushing submit
 		$("#results").show();
-		//stops timer
+		//pauses timer
 		pauseTimer();
 	});
 
-	//timer stops after clicking stop timer
-	$("#stopTimer").on('click', function(){
+	//timer pauses after clicking pause timer
+	$("#pauseTimer").on('click', function(){
 		pauseTimer();
 	});
 
-	$('#reset').on('click', function(){
-        resetTimer();
+	//timer resets after clicking reset timer
+	$('#restart').on('click', function(){
+        resetGame();
+        $("#questions").addClass('hide');
     });
 });
 
@@ -40,14 +47,15 @@ function totalTime() {
 };
 
 function pauseTimer() {
-	this.clearInterval(intervalId);
+	clearInterval(intervalId);
 };
 
 function startTimer() {
 	intervalId = setInterval(totalTime, 1000);
 };
 
-function resetTimer() {
-	intervalId = window.clearInterval(intervalId);
-	counter = 0;
+function resetGame() {
+    counter = -1;
+    totalTime();
+    this.clearInterval(intervalId);
 };
