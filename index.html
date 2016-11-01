@@ -10,7 +10,9 @@
 <div class="jumbotron">
     <h1>Thanksgiving Trivia</h1>
       <p> Seconds passed: <span id="timer"></span></p>
-    <button class="btn btn-default" id="start">Click Here to Start</button>
+    <button class="btn btn-default" id="startTimer">Start timer</button>
+    <button class="btn btn-default" id="stopTimer">Stop timer</button><br/><br/>
+    <button class="btn btn-default" id="startTrivia">Start Thanksgiving Trivia</button>
 </div>
 
 <hr/>
@@ -75,6 +77,15 @@
   <br/>
     <button class="btn btn-default" id="submit">Submit</button>
 </div>
+
+
+<div id="results">
+  <hr/>
+  <h1>How well do you know Thanksgiving?</h1><br/>
+  <div> Correct:  <span id="correct"></span></div><br/>
+  <div> Incorrect:  <span id="incorrect"></span></div><br/><br/>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="assets/js/js.js"></script>

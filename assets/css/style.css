@@ -22,3 +22,8 @@ h1{
 p{
 	padding: 20px;
 }
+
+#results{
+	text-align: center;
+	font-size: 15px;
+}
