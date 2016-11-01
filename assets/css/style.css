@@ -6,7 +6,6 @@ h1{
 	text-align: center;
 	font-size: 50px;
 	font-weight: bold;
-	font-family: 'Coiny', cursive;
 }
 
 .jumbotron{
@@ -14,6 +13,7 @@ h1{
 	display: block;
 	margin: 0 auto;
 	text-align: center;
+	font-family: 'Coiny', cursive;
 }
 
 #questions{
@@ -37,3 +37,4 @@ p{
 	width: 500px;
 	height: 275px;
 }
+
