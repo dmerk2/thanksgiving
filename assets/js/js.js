@@ -5,8 +5,8 @@ var incorrect = 0;
 var timeSpent;
 
 $(document).ready(function(){
-	$("#results").hide();
-		$('#questions').addClass('hide');
+	$("#results").addClass('hide');
+	$('#questions').addClass('hide');
 	$('#startTrivia').on('click', function(){
 		$('#questions').removeClass('hide');
 		startTimer();
@@ -24,7 +24,7 @@ $(document).ready(function(){
 		timeSpent = "It took you " + counter + " seconds to complete the Thanksgiving Trivia!"
 		$("#timeTaken").html(timeSpent);
 		//results will show after pushing submit
-		$("#results").show();
+		$("#results").removeClass('hide');
 		//pauses timer
 		pauseTimer();	
 	});
@@ -39,7 +39,6 @@ $(document).ready(function(){
 	$('#restart').on('click', function(){
         resetGame();        
         $("#questions").addClass('hide');
-        $("#questions").removeClass('hide');
         $("#results").addClass('hide');
         $(".jumbotron").removeClass('hide');
         //clearing the checked radio buttons
