@@ -1,4 +1,8 @@
-var counter = 0;
+// var currentTime = new Date();
+// var start = new Date;
+var percent;
+var minutes = 0;
+var seconds = 0;
 var intervalId;
 var correct = 0;
 var incorrect = 0;
@@ -21,12 +25,12 @@ $(document).ready(function(){
 		//puts in the html what questions were correct vs incorrect
 		$('#correct').html(numberCorrect);
 		$("#incorrect").html(numberIncorrect);
-		timeSpent = "It took you " + counter + " seconds to complete the Thanksgiving Trivia!"
+		timeSpent = "It took you " + minutes + " minutes and " + seconds + " seconds to complete the Thanksgiving Trivia!"
 		$("#timeTaken").html(timeSpent);
+		//calculating percentage of correct answers
+		$("#totalPercent").html("You got " + percentCorrect(numberCorrect, numberIncorrect) + "% on the test!");
 		//results will show after pushing submit
-		$("#results").removeClass('hide');
-		//pauses timer
-		pauseTimer();	
+		$("#results").removeClass('hide');	
 	});
 
 	//timer pauses after clicking pause timer
@@ -46,9 +50,13 @@ $(document).ready(function(){
     });
 });
 
+function percentCorrect(x, y) {
+	return Math.round((x/y)*100);
+};
+
 function totalTime() {
-	counter++;
-	$('#timer').html(counter);
+	seconds++;
+	$('#seconds').html(seconds);	
 };
 
 function pauseTimer() {
@@ -60,7 +68,7 @@ function startTimer() {
 };
 
 function resetGame() {
-    counter = -1;
+    seconds = -1;
     totalTime();
     this.clearInterval(intervalId);
 };

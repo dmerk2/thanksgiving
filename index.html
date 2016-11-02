@@ -10,9 +10,9 @@
 
 <div class="jumbotron">
     <h1>Thanksgiving Trivia</h1>
-      <p> Seconds passed: <span id="timer"></span></p>
+      <p> Time passed: <span id="minutes"></span><span id="seconds"></span></p>
     <button class="btn btn-default" id="pauseGame">Pause Game</button><br/><br/>
-    <button class="btn btn-default" id="startTrivia">Start Thanksgiving Trivia</button>
+    <button class="btn btn-default" id="startTrivia">Start Game</button>
 </div>
 
 <div id="questions">
@@ -76,6 +76,7 @@
 
 <div id="results">
   <h1>How well do you know Thanksgiving?</h1><br/>
+  <div id="totalPercent"></div><br/>
   <div id="timeTaken"></div><br/>
   <div> Correct:  <span id="correct"></span></div><br/>
   <div> Incorrect:  <span id="incorrect"></span></div><br/>
