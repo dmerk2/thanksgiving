@@ -1,6 +1,5 @@
-// var currentTime = new Date();
-// var start = new Date;
-var percent;
+
+// var minutes = setInterval(totalTime, 3 * 1000);
 var minutes = 0;
 var seconds = 0;
 var intervalId;
@@ -50,10 +49,12 @@ $(document).ready(function(){
     });
 });
 
+// NOT GIVING CORRECT PERCENTAGE?
 function percentCorrect(x, y) {
 	return Math.round((x/y)*100);
 };
 
+// CAN'T FIGURE OUT HOW TO MAKE MINUTES INCREASE EVERY 60 SECONDS?
 function totalTime() {
 	seconds++;
 	$('#seconds').html(seconds);	
@@ -63,8 +64,13 @@ function pauseTimer() {
 	clearInterval(intervalId);
 };
 
+// CAN'T FIGURE OUT HOW TO MAKE MINUTES INCREASE EVERY 60 SECONDS?
 function startTimer() {
 	intervalId = setInterval(totalTime, 1000);
+	//minutes = setInterval((totalTime, 60 * 1000) + minutes);
+	for(var i = 0; i < 3; i++) {
+		$("#minutes").html(minutes[i]);
+	};
 };
 
 function resetGame() {
