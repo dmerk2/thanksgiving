@@ -1,10 +1,9 @@
-
-// var minutes = setInterval(totalTime, 3 * 1000);
 var minutes = 0;
 var seconds = 0;
 var intervalId;
 var correct = 0;
 var incorrect = 0;
+var totalQuestions = 10;
 var timeSpent;
 
 $(document).ready(function(){
@@ -27,7 +26,7 @@ $(document).ready(function(){
 		timeSpent = "It took you " + minutes + " minutes and " + seconds + " seconds to complete the Thanksgiving Trivia!"
 		$("#timeTaken").html(timeSpent);
 		//calculating percentage of correct answers
-		$("#totalPercent").html("You got " + percentCorrect(numberCorrect, numberIncorrect) + "% on the test!");
+		$("#totalPercent").html("You got " + percentCorrect(numberCorrect, totalQuestions) + "% on the test!");
 		//results will show after pushing submit
 		$("#results").removeClass('hide');	
 	});
@@ -57,7 +56,9 @@ function percentCorrect(x, y) {
 // CAN'T FIGURE OUT HOW TO MAKE MINUTES INCREASE EVERY 60 SECONDS?
 function totalTime() {
 	seconds++;
-	$('#seconds').html(seconds);	
+	$("#seconds").html(seconds);	
+		if(seconds % 5  == 0) minutes++;
+			$("#minutes").html(minutes);
 };
 
 function pauseTimer() {
@@ -67,10 +68,6 @@ function pauseTimer() {
 // CAN'T FIGURE OUT HOW TO MAKE MINUTES INCREASE EVERY 60 SECONDS?
 function startTimer() {
 	intervalId = setInterval(totalTime, 1000);
-	//minutes = setInterval((totalTime, 60 * 1000) + minutes);
-	for(var i = 0; i < 3; i++) {
-		$("#minutes").html(minutes[i]);
-	};
 };
 
 function resetGame() {
