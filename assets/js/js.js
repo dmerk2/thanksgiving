@@ -48,29 +48,32 @@ $(document).ready(function(){
     });
 });
 
-// NOT GIVING CORRECT PERCENTAGE?
 function percentCorrect(x, y) {
 	return Math.round((x/y)*100);
 };
 
-// CAN'T FIGURE OUT HOW TO MAKE MINUTES INCREASE EVERY 60 SECONDS?
 function totalTime() {
 	seconds++;
 	$("#seconds").html(seconds);	
-		if(seconds % 5  == 0) minutes++;
-			$("#minutes").html(minutes);
+		// if seconds is 60 add 1 to minutes
+		if(seconds % 60 == 0) minutes++;
+			// if seconds is 60 than reset seconds back to 0
+			if(seconds == 60) {
+				seconds = 0;
+				$("#minutes").html(minutes);
+		};
 };
 
 function pauseTimer() {
 	clearInterval(intervalId);
 };
 
-// CAN'T FIGURE OUT HOW TO MAKE MINUTES INCREASE EVERY 60 SECONDS?
 function startTimer() {
 	intervalId = setInterval(totalTime, 1000);
 };
 
 function resetGame() {
+		minutes = -1;
     seconds = -1;
     totalTime();
     this.clearInterval(intervalId);
