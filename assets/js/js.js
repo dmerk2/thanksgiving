@@ -5,7 +5,6 @@ var correct = 0;
 var incorrect = 0;
 var totalQuestions = 10;
 var timeSpent;
-var grade;
 var percent = percentCorrect();
 
 $(document).ready(function(){
@@ -28,10 +27,10 @@ $(document).ready(function(){
 		
 
 		//inserting the grade you recieved into html
-		grade = "You recieved the grade " + grade();
+		grade = "You recieved the grade " + grade;
 		
 
-		$("#grade").html(grade);
+		$("#grade").text(grade);
 		//inputing amount of time into html
 		timeSpent = "It took you " + minutes + " minutes and " + seconds + " seconds to complete the Thanksgiving Trivia!"
 		$("#timeTaken").html(timeSpent);
@@ -58,18 +57,36 @@ $(document).ready(function(){
     });
 });
 
-function grade() {
-	if(percent >= 90) {
-		grade = "A";
-	} else if(percent >= 80 && percent <= 89) {
-		grade = "B";
-	} else if(percent >= 70 && percent <= 79) {
-		grade = "C";
-	} else if(percent >= 60 && percent <= 69) {
-		grade = "D";
-	} else {
-		grade = "F";
-	};
+// function grade() {
+// 	if(percent >= 90) {
+// 		grade = "A";
+// 	} else if((percent >= 80) && (percent <= 89)) {
+// 		grade = "B";
+// 	} else if((percent >= 70) && (percent <= 79)) {
+// 		grade = "C";
+// 	} else if((percent >= 60) && (percent <= 69)) {
+// 		grade = "D";
+// 	} else {
+// 		grade = "F";
+// 	};
+// };
+
+var grade = "";
+
+switch(grade) {
+	case 'A': percent >= 90;
+	break;
+
+	case 'B': percent >= 80 && percent <= 89;
+	break;
+
+	case 'C': percent >= 70 && percent <= 79;
+	break;
+
+	case 'D': percent >= 60 && percent <= 69;
+	break;
+
+	default: 'F';
 };
 
 function percentCorrect(x, y) {
