@@ -5,7 +5,30 @@ var correct = 0;
 var incorrect = 0;
 var totalQuestions = 10;
 var timeSpent;
-var percent = percentCorrect();
+
+var percent = function percentCorrect(x, y) {
+	var number = Math.round((x/y)*100);
+	console.log(number);
+	return number;
+};
+
+var gradeFunction = function() {
+	var gradeResult;
+	console.log(percent);
+	if(percent >= 90) {
+		gradeResult = "A";
+	} else if((percent >= 80) && (percent <= 89)) {
+		gradeResult = "B";
+	} else if((percent >= 70) && (percent <= 79)) {
+		gradeResult = "C";
+	} else if((percent >= 60) && (percent <= 69)) {
+		gradeResult = "D";
+	} else {
+		gradeResult = "F";
+	};
+
+	return gradeResult;
+};;
 
 $(document).ready(function(){
 	$("#results").addClass('hide');
@@ -27,15 +50,15 @@ $(document).ready(function(){
 		
 
 		//inserting the grade you recieved into html
-		grade = "You recieved the grade " + grade;
-		
+		var gradeString = "You recieved a " + gradeFunction();
+		$("#grade").text(gradeString);
 
-		$("#grade").text(grade);
+
 		//inputing amount of time into html
 		timeSpent = "It took you " + minutes + " minutes and " + seconds + " seconds to complete the Thanksgiving Trivia!"
 		$("#timeTaken").html(timeSpent);
 		//calculating percentage of correct answers
-		$("#totalPercent").html("You recieved " + percentCorrect(numberCorrect, totalQuestions) + "% on the quiz!");
+		$("#totalPercent").html("You recieved " + percent(numberCorrect, totalQuestions) + "% on the quiz!");
 		//results will show after pushing submit
 		$("#results").removeClass('hide');	
 	});
@@ -57,41 +80,24 @@ $(document).ready(function(){
     });
 });
 
-// function grade() {
-// 	if(percent >= 90) {
-// 		grade = "A";
-// 	} else if((percent >= 80) && (percent <= 89)) {
-// 		grade = "B";
-// 	} else if((percent >= 70) && (percent <= 79)) {
-// 		grade = "C";
-// 	} else if((percent >= 60) && (percent <= 69)) {
-// 		grade = "D";
-// 	} else {
-// 		grade = "F";
-// 	};
+
+
+// GRADE RETURNS UNDEFINED
+// switch(grade) {
+// 	case 'A': percent >= 90;
+// 	break;
+
+// 	case 'B': percent >= 80 && percent <= 89;
+// 	break;
+
+// 	case 'C': percent >= 70 && percent <= 79;
+// 	break;
+
+// 	case 'D': percent >= 60 && percent <= 69;
+// 	break;
+
+// 	default: 'F';
 // };
-
-var grade = "";
-
-switch(grade) {
-	case 'A': percent >= 90;
-	break;
-
-	case 'B': percent >= 80 && percent <= 89;
-	break;
-
-	case 'C': percent >= 70 && percent <= 79;
-	break;
-
-	case 'D': percent >= 60 && percent <= 69;
-	break;
-
-	default: 'F';
-};
-
-function percentCorrect(x, y) {
-	return Math.round((x/y)*100);
-};
 
 
 // NEED TO RESET MINUTES
