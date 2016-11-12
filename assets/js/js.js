@@ -8,13 +8,13 @@ var timeSpent;
 
 var percent = function percentCorrect(x, y) {
 	var number = Math.round((x/y)*100);
-	console.log(number);
+	// console.log(number);
 	return number;
 };
 
 var gradeFunction = function() {
 	var gradeResult;
-	console.log(percent);
+	// console.log(percent);
 	if(percent >= 90) {
 		gradeResult = "A";
 	} else if((percent >= 80) && (percent <= 89)) {
@@ -104,13 +104,14 @@ $(document).ready(function(){
 function totalTime() {
 	seconds++;
 	$("#seconds").html(seconds);	
-		// if seconds is 60 add 1 to minutes
-		if(seconds % 60 == 0) minutes++;
-			// if seconds is 60 than reset seconds back to 0
-			if(seconds == 60) {
-				seconds = 0;
-				$("#minutes").html(minutes);
-		}
+	// if seconds is 60 add 1 to minutes
+	if(seconds % 60 == 0) minutes++;
+	// if seconds is 60 than reset seconds back to 0
+	if(seconds == 60) {
+		seconds = 0;
+		
+	}
+	$("#minutes").html(minutes);
 };
 
 function pauseTimer() {
