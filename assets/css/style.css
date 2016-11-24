@@ -19,6 +19,10 @@ h4{
 	font-family: 'Itim', cursive
 }
 
+.h4results {
+	font-family: 'Coiny', cursive;
+}
+
 .jumbotron{
 	background: linear-gradient(to right, darkred, red, orange, darkorange, brown);
 	margin: 0 auto;
@@ -26,14 +30,12 @@ h4{
 	font-family: 'Coiny', cursive;
 }
 
-.jumbotron2{
-	background: linear-gradient(to right, darkred, red, orange, darkorange, brown);
-	margin: 10px auto 10px auto;
+#questions{
 	text-align: center;
-	font-family: 'Coiny', cursive;
+	font-family: 'Itim', cursive;
 }
 
-#questions{
+#correctAnswersDiv{
 	text-align: center;
 	font-family: 'Itim', cursive;
 }
@@ -68,4 +70,8 @@ p{
 
 #startTrivia2 {
 	margin: 20px auto 30px auto;
+}
+
+#restart2 {
+	margin: 10px 0 10px 0;
 }

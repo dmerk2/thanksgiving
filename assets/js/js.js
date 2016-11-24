@@ -28,12 +28,11 @@ var gradeFunction = function() {
 	return gradeResult;
 };
 
-	
 	$('#questions').addClass('hide');
 	$("#questions2").addClass('hide');
 	$("#correctAnswersDiv").addClass("hide");
 	$("#results").addClass('hide');
-	
+
 	
 $(document).ready(function(){
 
@@ -72,7 +71,7 @@ $(document).ready(function(){
 	// timer pauses after clicking pause timer
 	$("#pauseGame").on('click', function(){
 		pauseTimer();
-		$("#questions2").addClass('hide');
+		$("#questions").addClass('hide');
 	});
 
 	// timer resets after clicking reset timer
@@ -85,20 +84,23 @@ $(document).ready(function(){
     	$("input:checked").removeAttr("checked");
     });
 		
-    $("#correctAnswersButton").on("click", function(){   	
+    $("#correctAnswersButton").on("click", function(){   
     	$("#correctAnswersDiv").removeClass("hide");
     	$("#questions").addClass('hide');
     	$("#results").addClass('hide');
     	$(".jumbotron").addClass('hide');
     });
 
-    $("#startTrivia2").on("click", function(){
-    	$(".jumbotron2").addClass('hide');
-    	$(".jumbotron").removeClass('hide');
-    	$(".jumbotron2").removeClass('hide');
-    	$("#correctAnswersDiv").removeClass('hide');
-    	$("#questions").addClass('hide');
-	});
+    $("#restart2").on("click", function(){
+        resetGame();
+        $("#correctAnswersDiv").addClass("hide");        
+        $("#questions2").addClass('hide');
+        $("#results").addClass('hide');
+        $(".jumbotron").removeClass('hide');
+        //clearing the checked radio buttons
+    	$("input:checked").removeAttr("checked")    	
+    });
+
 });
 
 function totalTime() {
