@@ -33,7 +33,6 @@ var gradeFunction = function() {
 	$("#correctAnswersDiv").addClass("hide");
 	$("#results").addClass('hide');
 
-	
 $(document).ready(function(){
 
 	$('#startTrivia').on('click', function(){	
@@ -56,6 +55,7 @@ $(document).ready(function(){
 
 		// inserting the grade you recieved into html
 		var gradeString = "You recieved a " + gradeFunction();
+		console.log(gradeFunction());
 		$("#grade").text(gradeString);
 
 
